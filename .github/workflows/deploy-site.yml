@@ -19,6 +19,8 @@ concurrency:
 
 jobs:
   build:
+    # Only deploy from the public pipeline repo (other copies of this code have no Pages site)
+    if: github.repository == 'tuanh1983/ai-lesson-video-pipeline'
     runs-on: ubuntu-latest
     defaults:
       run:
