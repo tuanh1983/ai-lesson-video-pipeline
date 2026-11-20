@@ -127,14 +127,34 @@ export const InterferenceSim: React.FC = () => {
 			ctx.fill();
 			ctx.fillStyle = '#fff';
 			ctx.fillText('M', point.x * sx + 14, point.y * sy + 4);
+			// On the segment S1S2: bracket showing M's distance from the midpoint
+			const fromMid = Math.abs(point.x - WORLD_W / 2);
+			if (point.y === SRC_Y && fromMid > 0.1) {
+				const x0 = (WORLD_W / 2) * sx;
+				const x1 = point.x * sx;
+				const yy = SRC_Y * sy + 26;
+				ctx.strokeStyle = '#fff';
+				ctx.lineWidth = 2;
+				ctx.beginPath();
+				ctx.moveTo(x0, yy - 7);
+				ctx.lineTo(x0, yy + 7);
+				ctx.moveTo(x0, yy);
+				ctx.lineTo(x1, yy);
+				ctx.moveTo(x1, yy - 7);
+				ctx.lineTo(x1, yy + 7);
+				ctx.stroke();
+				ctx.fillText(`${fromMid.toLocaleString('vi-VN', {maximumFractionDigits: 1})} cm`, (x0 + x1) / 2, yy + 20);
+			}
 		}
 	});
 
 	const onPick = (e: React.PointerEvent<HTMLCanvasElement>) => {
 		const rect = e.currentTarget.getBoundingClientRect();
+		const y = ((e.clientY - rect.top) / rect.height) * WORLD_H;
 		setPoint({
 			x: ((e.clientX - rect.left) / rect.width) * WORLD_W,
-			y: Math.max(SRC_Y + 0.3, ((e.clientY - rect.top) / rect.height) * WORLD_H),
+			// clicks near (or above) the source line snap onto the segment S1S2
+			y: y < SRC_Y + 0.4 ? SRC_Y : y,
 		});
 	};
 

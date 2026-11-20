@@ -30,7 +30,8 @@ if [[ "$MODE" == "script" ]]; then
 elif [[ "$MODE" == "render" ]]; then
 	OUT="$BRIEFS/$EP-codex-render-review.md"
 	TASK="Mode B (render review). The attached images are check frames from youtube-video-studio/out/$EP-check-*.png (one per scene, in order). Also read youtube-video-studio/episodes/$EP.json and $BRIEFS/$EP-render.md."
-	for f in "$ROOT"/youtube-video-studio/out/"$EP"-check-*.png; do [[ -f "$f" ]] && IMAGES+=(-i "$f"); done
+	# "--image=<file>" (not "-i <file>"): -i takes multiple values and would swallow the prompt
+	for f in "$ROOT"/youtube-video-studio/out/"$EP"-check-*.png; do [[ -f "$f" ]] && IMAGES+=("--image=$f"); done
 	if [[ ${#IMAGES[@]} -eq 0 ]]; then echo "No check frames found for $EP"; exit 2; fi
 else
 	echo "mode must be script or render"; exit 2
