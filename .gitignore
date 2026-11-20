@@ -1,2 +1,15 @@
+# Separate project (test automation) — not part of this repo
 /Automation_Temp_Structure
-/youtube-video-studio
+
+# Dependencies and build output (sub-projects also have their own .gitignore)
+node_modules/
+dist/
+youtube-video-studio/out/
+
+# Media assets: large, and licences (TTS, music, AI images) may not allow redistribution
+youtube-video-studio/public/**
+!youtube-video-studio/public/.gitkeep
+
+# Local-only Claude Code settings and env files
+.claude/settings.local.json
+.env

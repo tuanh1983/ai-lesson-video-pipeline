@@ -1,0 +1,37 @@
+{
+  "channelName": "Học Lý Hoá 11",
+  "title": "Giao thoa sóng trong 2 phút",
+  "subtitle": "Vật lí 11 · Bài 12 – Kết nối tri thức",
+  "theme": {
+    "primary": "#3B6FE0",
+    "accent": "#F2A516",
+    "background": "#0B1020",
+    "text": "#FFFFFF"
+  },
+  "introSeconds": 2,
+  "outroSeconds": 5,
+  "outroText": "Làm bài luyện tập trên web nhé!",
+  "musicVolume": 0.2,
+  "musicDuckedVolume": 0.06,
+  "scenes": [
+    { "type": "color", "durationInSeconds": 6, "caption": "Vì sao có chỗ sóng mạnh, có chỗ gần như đứng yên?" },
+    { "type": "color", "durationInSeconds": 8, "caption": "Giao thoa: vùng dao động mạnh xen kẽ vùng dao động yếu" },
+    { "type": "color", "durationInSeconds": 6, "caption": "Nguồn kết hợp: cùng phương, cùng tần số, hiệu số pha không đổi" },
+    { "type": "color", "durationInSeconds": 5, "caption": "Hai nguồn cùng pha S1, S2 · MS1 = d1, MS2 = d2" },
+    { "type": "color", "durationInSeconds": 7, "caption": "Cực đại: d2 − d1 = kλ (k = 0, ±1, ±2…)" },
+    { "type": "color", "durationInSeconds": 5, "caption": "Trung trực của S1S2: cực đại k = 0" },
+    { "type": "color", "durationInSeconds": 8, "caption": "Cực tiểu: d2 − d1 = (k + ½)λ" },
+    { "type": "color", "durationInSeconds": 8, "caption": "f = 20 Hz, v = 40 cm/s → λ = v/f = 2 cm" },
+    { "type": "color", "durationInSeconds": 7, "caption": "Hiệu đường đi 4 cm = 2λ → cực đại bậc 2" },
+    { "type": "color", "durationInSeconds": 5, "caption": "Trên S1S2: hai cực đại liên tiếp cách nhau λ/2" },
+    { "type": "color", "durationInSeconds": 6, "caption": "Dịch x → hiệu đường đi đổi 2x; cần đổi λ" },
+    { "type": "color", "durationInSeconds": 5, "caption": "λ = 2 cm → các cực đại cách nhau 1 cm" },
+    { "type": "color", "durationInSeconds": 6, "caption": "Thí nghiệm Young: vân sáng, vân tối xen kẽ" },
+    { "type": "color", "durationInSeconds": 5, "caption": "Khoảng vân: i = λD/a" },
+    { "type": "color", "durationInSeconds": 5, "caption": "a: khoảng cách hai khe · D: từ hai khe đến màn" },
+    { "type": "color", "durationInSeconds": 6, "caption": "a = 1 mm, D = 2 m, λ = 0,5 μm" },
+    { "type": "color", "durationInSeconds": 3, "caption": "i = λD/a = 1 mm" },
+    { "type": "color", "durationInSeconds": 7, "caption": "Cực đại kλ · Cực tiểu (k + ½)λ · i = λD/a" },
+    { "type": "color", "durationInSeconds": 4, "caption": "Luyện tập ngay trên web Học Lý Hoá 11!" }
+  ]
+}

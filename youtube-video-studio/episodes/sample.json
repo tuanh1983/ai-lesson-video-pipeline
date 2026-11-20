@@ -1,0 +1,21 @@
+{
+  "channelName": "Your Channel",
+  "title": "5 Facts About the Ocean",
+  "subtitle": "Episode 1",
+  "theme": {
+    "primary": "#0984E3",
+    "accent": "#FDCB6E",
+    "background": "#0B1020",
+    "text": "#FFFFFF"
+  },
+  "introSeconds": 3,
+  "outroSeconds": 4,
+  "outroText": "Subscribe for more",
+  "musicVolume": 0.35,
+  "musicDuckedVolume": 0.12,
+  "scenes": [
+    { "type": "color", "durationInSeconds": 4, "caption": "The ocean covers more than 70% of Earth's surface." },
+    { "type": "color", "durationInSeconds": 4, "caption": "More than 80% of it has never been explored." },
+    { "type": "color", "durationInSeconds": 4, "caption": "Đại dương tạo ra hơn một nửa lượng oxy chúng ta hít thở." }
+  ]
+}
