@@ -35,7 +35,9 @@ export const Caption: React.FC<{text: string; theme: Theme}> = ({text, theme}) =
 					lineHeight: 1.25,
 					color: theme.text,
 					textAlign: 'center',
-					backgroundColor: 'rgba(0,0,0,0.55)',
+					backgroundColor: 'rgba(8,10,20,0.82)', // solid enough to read over bright images
+					textWrap: 'balance', // avoid a single orphan word on the last line
+					maxWidth: isVertical ? '100%' : '82%',
 					padding: `${unit * 0.8}px ${unit * 1.6}px`,
 					borderRadius: unit * 1,
 				}}

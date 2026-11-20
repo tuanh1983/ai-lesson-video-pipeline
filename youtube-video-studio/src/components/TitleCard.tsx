@@ -50,6 +50,7 @@ export const TitleCard: React.FC<{
 					fontWeight: 800,
 					lineHeight: 1.1,
 					marginTop: unit * 1.5,
+					textWrap: 'balance',
 					transform: `scale(${0.8 + 0.2 * pop})`,
 				}}
 			>
