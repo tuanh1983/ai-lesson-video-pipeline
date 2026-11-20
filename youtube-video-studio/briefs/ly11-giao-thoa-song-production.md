@@ -1,17 +1,40 @@
 # Production sheet — ly11-giao-thoa-song
 
-- Brief: `briefs/ly11-giao-thoa-song.md` · **Round 2** (applies `briefs/ly11-giao-thoa-song-review.md`, verdict FAIL in round 1)
+- Brief: `briefs/ly11-giao-thoa-song.md` · **Round 3** (round 2 applied `briefs/ly11-giao-thoa-song-review.md`, which then passed; round 3 applies the Codex gate `briefs/ly11-giao-thoa-song-codex-review.md`, verdict FAIL)
 - Source of truth for formulas: `hoc-ly-hoa-11/src/data/vatLi.ts` → chapter `giao-thoa-song` (Bài 12. Giao thoa sóng, KNTT). All formulas and worked numbers below come from that formula sheet and quiz.
 - Format: Long video 16:9 · Channel (YouTube, intro card): **Toán Lý Hoá 11 Trực Quan** (coordinator default, see "Changes from review" item 5) · Tone: calm, friendly, educational
 - Timing: intro title card **2 s** + 19 scenes **113 s** + outro **5 s** = **120 s** (target 120 s ±10%, exactly on target).
   - The intro is kept at 2 s (not the default 3 s) so the spoken hook starts at 0:02, inside the first 3 seconds. The voiceover starts at the end of the intro (`Episode.tsx`).
 - Narration rate: ≈ 3.5 syllables/s. Syllables are counted on the **TTS text** (numbers read as words, "Young" = I-âng = 2 syllables, lam-đa = 2, xăng-ti-mét = 3, mi-li-mét = 3, micrô-mét = 3).
-- Total narration: **362 syllables ≈ 103 s** of speech in 113 s of scenes → about 0.5 s of pause per scene on average. No scene is above 96% of its slot.
+- Total narration: **363 syllables ≈ 104 s** of speech in 113 s of scenes → about 0.5 s of pause per scene on average. No scene is above 97% of its slot.
 - **Editor note:** the table durations are planning values. After generating the voiceover, align each scene's `durationInSeconds` to the real TTS timestamps (start of each sentence), not to the table.
 
 ---
 
 ## Changes from review
+
+### Round 3 (Codex)
+
+Source: `briefs/ly11-giao-thoa-song-codex-review.md` (FAIL). Nothing else was changed; §8 item 7 (human-confirmed decisions) is untouched.
+
+**Required fixes**
+1. **Scene 12 scope (blocking).** The λ/2 spacing holds only for *consecutive* maxima *on the segment S1S2*.
+   - Caption (§2 table + JSON): `λ = 2 cm → các cực đại cách nhau 1 cm` → `Trên S1S2: hai cực đại liên tiếp cách nhau 1 cm`.
+   - TTS text (§2 table + §3 block): "Với lam-đa bằng hai như trên, các cực đại cách nhau một xăng-ti-mét." → "Lam-đa hai xăng-ti-mét thì hai cực đại liên tiếp cách một xăng-ti-mét."
+   - Recount: lam-đa 2 + hai 1 + xăng-ti-mét 3 + thì 1 + hai 1 + cực 1 + đại 1 + liên 1 + tiếp 1 + cách 1 + một 1 + xăng-ti-mét 3 = **17 syllables** in 5 s → 17 ÷ 17.5 = **97%** (≤ 100%). The duration is unchanged (5 s), so all timestamps and chapters are unchanged.
+   - Totals: 362 → **363 syllables ≈ 103.7 s** of speech. s12 (97%) is now the highest load, ahead of s7 (96%). The header, the table sums, §3 and §7 are updated to match.
+2. **AI-content disclosure (blocking).** §6 now tells the publisher to set YouTube Studio's altered or synthetic content / AI disclosure setting to **Yes** at upload, because the video uses AI-generated images, a TTS voice and Suno music. I did not give an exact menu path, because the Studio labels may change. `Video được tạo bằng công cụ AI.` is still the last line of the description.
+
+**Optional suggestions applied**
+- **s6 image prompt:** "glowing amber as the brightest band" → "glowing amber as the highlighted central maximum". k = 0 means constructive interference, but how bright it looks depends on the amplitudes that arrive.
+- **Stale placeholder text removed.** The §6 note telling the publisher to replace the bracketed URL is gone, because the practice URL is already filled in. §8 item 6 is now marked resolved. The note about recomputing chapters if TTS timing changes stays in §7.
+- **s14 caption: λ is now named as the light's wavelength.** `Khoảng vân: i = λD/a` → `Khoảng vân: i = λD/a (λ: bước sóng ánh sáng)`. This is a caption-only change (sheet + JSON), so the s14 narration and its load (16 syllables, 91%) stay the same. The caption is still within 12 words.
+
+**Optional suggestions skipped**
+- **λ named in the narration (s14–s16):** skipped. s14 (91%), s15 (91%) and s16 (95%) have no room for "bước sóng ánh sáng" (+5 syllables) without going over 100%. The caption change above covers it on screen.
+- **s17 unit conversion:** skipped. s17 is a 3 s slot (10.5 syllables at most). Any spoken conversion, even the shortest ("Đổi ra mét rồi thay vào: i bằng một mi-li-mét", 12 syllables), would load it to 114%. A caption such as `i = 0,5·10⁻⁶ · 2 / 10⁻³ m = 1 mm` would be too dense to read in 3 s. The full conversion is in §8 item 8 for anyone who wants it in the description or a pinned comment.
+
+### Round 2
 
 **Required fixes**
 1. **Scene 4 timing (blocking).** Took the reviewer's preferred narration: "Hai nguồn cùng pha S một, S hai; M cách chúng đê một và đê hai." It is 16 syllables in 5 s (3.2/s, 91%). The caption is unchanged. Scene 4 timestamps (0:22–0:27) are unchanged.
@@ -35,7 +58,7 @@
 - **s7 wording:** "triệt tiêu nhau" → "làm yếu nhau". This matches s1/s2 and the sheet note ("dao động yếu hoặc đứng yên") and keeps the same syllable count.
 - **s7 caption:** added the range of k: `Cực tiểu: d2 − d1 = (k + ½)λ (k nguyên)`.
 - **s11 caption + narration:** the conclusion is now stated: caption `Dịch x → hiệu đổi 2x; 2x = λ → x = λ/2`, narration "…muốn đổi một lam-đa thì ích bằng lam-đa chia hai". To fit it, s11 went from 6 s to 7 s (23 syllables, 94%). This also brings the total from 119 s to exactly 120 s.
-- **§6 website link:** added a link line above the AI line. The AI line is still last. **No URL exists in the repo**, so the line holds a placeholder that must be filled before upload (see §8).
+- **§6 website link:** added a link line above the AI line. The AI line is still last. **No URL exists in the repo**, so the line held a placeholder. *(Superseded: the human has since filled in the GitHub Pages URL; see §8 items 6–7.)*
 - **§6 "Made for kids: No":** added under the metadata for the publisher.
 - **Tags:** added "toán lý hoá 11 trực quan" (15 tags) to match the channel name.
 
@@ -87,15 +110,15 @@ The narration column is the **TTS text** (symbols spelled out). Captions use nor
 | 3 | 6 | Hai nguồn kết hợp: cùng phương, cùng tần số, hiệu số pha không đổi theo thời gian. | 17 | 81% | Nguồn kết hợp: cùng phương, cùng tần số, hiệu số pha không đổi | Two identical vibrating rods tapping a water surface in sync, side-by-side matching sine waveforms above them with identical spacing, showing same direction and same frequency, clean flat educational diagram, vector style, dark navy background #0B1020, royal blue #3B6FE0 and amber #F2A516 accents, soft glow, minimal, no text, no letters, no numbers, no watermark, 16:9 |
 | 4 | 5 | Hai nguồn cùng pha ét một, ét hai; em cách chúng đê một và đê hai. | 16 | 91% | Hai nguồn cùng pha S1, S2 · MS1 = d1, MS2 = d2 | Top view of a ripple tank with two glowing source dots on a horizontal line and one marked point above them, two straight dashed lines from the point to each source (one blue, one amber), faint ripples in the background, clean flat educational diagram, vector style, dark navy background #0B1020, royal blue #3B6FE0 and amber #F2A516 accents, soft glow, minimal, no text, no letters, no numbers, no watermark, 16:9 |
 | 5 | 7 | Em dao động cực đại khi đê hai trừ đê một bằng ca lam-đa: hai sóng tới cùng pha, tăng cường nhau. | 23 | 94% | Cực đại: d2 − d1 = kλ (k = 0, ±1, ±2…) | Two identical sine waves arriving at the same point crest-on-crest and adding into one tall amber wave, inset of a ripple tank with a bright interference band highlighted, clean flat educational diagram, vector style, dark navy background #0B1020, royal blue #3B6FE0 and amber #F2A516 accents, soft glow, minimal, no text, no letters, no numbers, no watermark, 16:9 |
-| 6 | 5 | Đường trung trực của ét một ét hai chính là cực đại ca bằng không. | 15 | 86% | Trung trực của S1S2: cực đại k = 0 | Top view of a ripple tank, two sources on a horizontal line, the straight central vertical band between them glowing amber as the brightest band, curved bands fanning out on both sides, clean flat educational diagram, vector style, dark navy background #0B1020, royal blue #3B6FE0 and amber #F2A516 accents, soft glow, minimal, no text, no letters, no numbers, no watermark, 16:9 |
+| 6 | 5 | Đường trung trực của ét một ét hai chính là cực đại ca bằng không. | 15 | 86% | Trung trực của S1S2: cực đại k = 0 | Top view of a ripple tank, two sources on a horizontal line, the straight central vertical band between them glowing amber as the highlighted central maximum, curved bands fanning out on both sides, clean flat educational diagram, vector style, dark navy background #0B1020, royal blue #3B6FE0 and amber #F2A516 accents, soft glow, minimal, no text, no letters, no numbers, no watermark, 16:9 |
 | 7 | 8 | Em dao động cực tiểu khi đê hai trừ đê một bằng ca cộng một phần hai, nhân lam-đa: hai sóng ngược pha, làm yếu nhau. | 27 | 96% | Cực tiểu: d2 − d1 = (k + ½)λ (k nguyên) | Two sine waves arriving at the same point crest-on-trough and cancelling into a nearly flat line, inset of a ripple tank with a calm dark band highlighted in blue, clean flat educational diagram, vector style, dark navy background #0B1020, royal blue #3B6FE0 and amber #F2A516 accents, soft glow, minimal, no text, no letters, no numbers, no watermark, 16:9 |
 | 8 | 8 | Cho ép bằng hai mươi héc, vê bằng bốn mươi xăng-ti-mét trên giây: lam-đa bằng vê chia ép, bằng hai xăng-ti-mét. | 26 | 93% | f = 20 Hz, v = 40 cm/s → λ = v/f = 2 cm | A single sine wave along a ruler-like scale with one wavelength bracketed by an amber arrow between two neighbouring crests, a small tuning-fork style vibrator at the left, clean flat educational diagram, vector style, dark navy background #0B1020, royal blue #3B6FE0 and amber #F2A516 accents, soft glow, minimal, no text, no letters, no numbers, no watermark, 16:9 |
 | 9 | 7 | Em cách hai nguồn mười và mười bốn xăng-ti-mét: hiệu là bốn, tức hai lam-đa, cực đại bậc hai. | 22 | 90% | Hiệu đường đi 4 cm = 2λ → cực đại bậc 2 | Top view of a ripple tank, two sources and a point sitting exactly on the second bright band to the side of the central band, two dashed lines of clearly different lengths from the point to the sources, clean flat educational diagram, vector style, dark navy background #0B1020, royal blue #3B6FE0 and amber #F2A516 accents, soft glow, minimal, no text, no letters, no numbers, no watermark, 16:9 |
 | 10 | 5 | Trên ét một ét hai, hai cực đại liên tiếp cách nhau lam-đa chia hai. | 16 | 91% | Trên S1S2: hai cực đại liên tiếp cách nhau λ/2 | Close-up of the straight segment between two wave sources, evenly spaced amber dots on the segment marking points of strongest vibration, a bracket between two neighbouring dots, clean flat educational diagram, vector style, dark navy background #0B1020, royal blue #3B6FE0 and amber #F2A516 accents, soft glow, minimal, no text, no letters, no numbers, no watermark, 16:9 |
 | 11 | 7 | Dịch điểm một đoạn ích, hiệu đường đi đổi hai ích; muốn đổi một lam-đa thì ích bằng lam-đa chia hai. | 23 | 94% | Dịch x → hiệu đổi 2x; 2x = λ → x = λ/2 | The segment between two sources with a small point sliding a short distance to the right, one distance arrow growing (amber) while the other shrinks (blue) by the same amount, clean flat educational diagram, vector style, dark navy background #0B1020, royal blue #3B6FE0 and amber #F2A516 accents, soft glow, minimal, no text, no letters, no numbers, no watermark, 16:9 |
-| 12 | 5 | Với lam-đa bằng hai như trên, các cực đại cách nhau một xăng-ti-mét. | 16 | 91% | λ = 2 cm → các cực đại cách nhau 1 cm | The segment between two sources drawn over a ruler scale, amber maxima dots spaced at equal small steps, clean flat educational diagram, vector style, dark navy background #0B1020, royal blue #3B6FE0 and amber #F2A516 accents, soft glow, minimal, no text, no letters, no numbers, no watermark, 16:9 |
+| 12 | 5 | Lam-đa hai xăng-ti-mét thì hai cực đại liên tiếp cách một xăng-ti-mét. | 17 | 97% | Trên S1S2: hai cực đại liên tiếp cách nhau 1 cm | The segment between two sources drawn over a ruler scale, amber maxima dots spaced at equal small steps, clean flat educational diagram, vector style, dark navy background #0B1020, royal blue #3B6FE0 and amber #F2A516 accents, soft glow, minimal, no text, no letters, no numbers, no watermark, 16:9 |
 | 13 | 6 | Ánh sáng cũng giao thoa: thí nghiệm I-âng với hai khe hẹp cho vân sáng, vân tối xen kẽ. | 20 | 95% | Thí nghiệm Young: vân sáng, vân tối xen kẽ | Side view of a classic double-slit interference setup: a light source, a barrier with two narrow slits, light spreading to a screen showing alternating bright and dark vertical fringes, no people, clean flat educational diagram, vector style, dark navy background #0B1020, royal blue #3B6FE0 and amber #F2A516 accents, soft glow, minimal, no text, no letters, no numbers, no watermark, 16:9 |
-| 14 | 5 | Khoảng vân i, khoảng cách hai vân sáng liên tiếp, bằng lam-đa đê chia a. | 16 | 91% | Khoảng vân: i = λD/a | Close-up of a screen with evenly spaced bright amber fringes on dark background, an arrow bracket spanning exactly from one bright fringe to the next, clean flat educational diagram, vector style, dark navy background #0B1020, royal blue #3B6FE0 and amber #F2A516 accents, soft glow, minimal, no text, no letters, no numbers, no watermark, 16:9 |
+| 14 | 5 | Khoảng vân i, khoảng cách hai vân sáng liên tiếp, bằng lam-đa đê chia a. | 16 | 91% | Khoảng vân: i = λD/a (λ: bước sóng ánh sáng) | Close-up of a screen with evenly spaced bright amber fringes on dark background, an arrow bracket spanning exactly from one bright fringe to the next, clean flat educational diagram, vector style, dark navy background #0B1020, royal blue #3B6FE0 and amber #F2A516 accents, soft glow, minimal, no text, no letters, no numbers, no watermark, 16:9 |
 | 15 | 5 | Với a là khoảng cách hai khe, đê là khoảng cách từ hai khe đến màn. | 16 | 91% | a: khoảng cách hai khe · D: từ hai khe đến màn | Side view of the double-slit setup with a small blue bracket between the two slits and a long amber bracket from the slit barrier to the screen, clean flat educational diagram, vector style, dark navy background #0B1020, royal blue #3B6FE0 and amber #F2A516 accents, soft glow, minimal, no text, no letters, no numbers, no watermark, 16:9 |
 | 16 | 6 | Cho a bằng một mi-li-mét, đê bằng hai mét, lam-đa bằng không phẩy năm micrô-mét. | 20 | 95% | a = 1 mm, D = 2 m, λ = 0,5 μm | Double-slit setup seen from above at a slight angle, green-cyan monochromatic light beam, fringes on a distant screen, clean flat educational diagram, vector style, dark navy background #0B1020, royal blue #3B6FE0 and amber #F2A516 accents, soft glow, minimal, no text, no letters, no numbers, no watermark, 16:9 |
 | 17 | 3 | Thay vào: i bằng một mi-li-mét. | 8 | 76% | i = λD/a = 1 mm | Close-up of the fringe pattern with one fringe spacing highlighted by a bright amber bracket and a small check-mark style glow, clean flat educational diagram, vector style, dark navy background #0B1020, royal blue #3B6FE0 and amber #F2A516 accents, soft glow, minimal, no text, no letters, no numbers, no watermark, 16:9 |
@@ -103,11 +126,11 @@ The narration column is the **TTS text** (symbols spelled out). Captions use nor
 | 19 | 4 | Hãy làm bài luyện tập trên web Học Lý Hoá mười một nhé! | 13 | 93% | Luyện tập ngay trên web Học Lý Hoá 11! | A friendly flat laptop showing an abstract quiz layout (blank cards and checkboxes, no readable text) with small ripple and light-fringe icons floating around it, clean flat educational diagram, vector style, dark navy background #0B1020, royal blue #3B6FE0 and amber #F2A516 accents, soft glow, minimal, no text, no letters, no numbers, no watermark, 16:9 |
 
 Scene durations sum: 6+8+6+5+7+5+8+8+7+5+7+5+6+5+5+6+3+7+4 = **113 s**.
-Syllables sum: 19+26+17+16+23+15+27+26+22+16+23+16+20+16+16+20+8+23+13 = **362** (≈ 103.4 s at 3.5/s).
+Syllables sum: 19+26+17+16+23+15+27+26+22+16+23+17+20+16+16+20+8+23+13 = **363** (≈ 103.7 s at 3.5/s).
 
 ## 3. Voiceover (TTS input — paste as is)
 
-Voice: a stock Vietnamese TTS voice (e.g. a northern-accent female voice), calm and warm, ~3.5 syllables/s, a short pause between lines. No cloned or imitated real voices. Expected read length is ≈ 103 s of speech, plus pauses, inside the 113 s scene window. Align the JSON scene durations to the generated timestamps instead of rushing the read.
+Voice: a stock Vietnamese TTS voice (e.g. a northern-accent female voice), calm and warm, ~3.5 syllables/s, a short pause between lines. No cloned or imitated real voices. Expected read length is ≈ 104 s of speech, plus pauses, inside the 113 s scene window. Align the JSON scene durations to the generated timestamps instead of rushing the read.
 
 Symbols are already spelled out for TTS: ép (f), vê (v), ích (x), em (M), ét (S), đê (d, D), ca (k), lam-đa (λ), I-âng (Young), and numbers in words. On-screen captions keep the normal symbols.
 
@@ -122,7 +145,7 @@ Symbols are already spelled out for TTS: ép (f), vê (v), ích (x), em (M), ét
 > Em cách hai nguồn mười và mười bốn xăng-ti-mét: hiệu là bốn, tức hai lam-đa, cực đại bậc hai.
 > Trên ét một ét hai, hai cực đại liên tiếp cách nhau lam-đa chia hai.
 > Dịch điểm một đoạn ích, hiệu đường đi đổi hai ích; muốn đổi một lam-đa thì ích bằng lam-đa chia hai.
-> Với lam-đa bằng hai như trên, các cực đại cách nhau một xăng-ti-mét.
+> Lam-đa hai xăng-ti-mét thì hai cực đại liên tiếp cách một xăng-ti-mét.
 > Ánh sáng cũng giao thoa: thí nghiệm I-âng với hai khe hẹp cho vân sáng, vân tối xen kẽ.
 > Khoảng vân i, khoảng cách hai vân sáng liên tiếp, bằng lam-đa đê chia a.
 > Với a là khoảng cách hai khe, đê là khoảng cách từ hai khe đến màn.
@@ -147,6 +170,8 @@ Mix: very quiet. The JSON uses `musicVolume` 0.2 and `musicDuckedVolume` 0.06 (u
 ## 6. YouTube metadata
 
 Channel: **Toán Lý Hoá 11 Trực Quan** · **Made for kids: No** (the content is for Grade 11 students; the `upload-youtube-lyhoa` skill also locks this) · Visibility: Unlisted (skill default).
+
+**AI-content disclosure: Yes (required at upload).** In YouTube Studio, set the altered or synthetic content / AI disclosure setting to **Yes** when uploading. The video uses AI-generated images, an AI TTS voice and Suno AI music. If the upload tool cannot set it, set it by hand in YouTube Studio before the video goes public. The description line "Video được tạo bằng công cụ AI." does not replace this setting. Keep both.
 
 **Title options**
 1. Giao thoa sóng trong 2 phút | Vật lí 11 KNTT – Bài 12
@@ -173,14 +198,14 @@ Channel: **Toán Lý Hoá 11 Trực Quan** · **Made for kids: No** (the content
 > Video được tạo bằng công cụ AI.
 
 Chapter lengths in a 120 s video: 22 s · 25 s · 15 s · 17 s · 25 s · 16 s. All are ≥ 10 s, the first starts at 00:00, and there are at least 3 chapters, so YouTube's chapter rules are met.
-Publisher: replace the bracketed placeholder with the real URL, or delete that line if there is no public URL yet. Do not publish the brackets. The AI line must stay last.
+Publisher: the AI line must stay the last line of the description. Also set the AI disclosure in YouTube Studio to Yes (see above).
 
 **Tags (15)**
 giao thoa sóng, vật lí 11, vật lý 11, kết nối tri thức, bài 12 giao thoa sóng, cực đại giao thoa, cực tiểu giao thoa, nguồn kết hợp, thí nghiệm Young, khoảng vân, giao thoa ánh sáng, sóng cơ, ôn tập vật lí 11, học lý hoá 11, toán lý hoá 11 trực quan
 
 ## 7. Asset checklist (under `youtube-video-studio/public/`)
 
-- [ ] `audio/ly11-giao-thoa-song-voice.mp3` (voiceover from the §3 TTS text, ≈ 103 s of speech, must fit within 113 s)
+- [ ] `audio/ly11-giao-thoa-song-voice.mp3` (voiceover from the §3 TTS text, ≈ 104 s of speech, must fit within 113 s)
 - [ ] `audio/ly11-giao-thoa-song-music.mp3` (Suno, ≈ 2:00, instrumental)
 - [ ] `images/ly11-giao-thoa-song-s01.png`
 - [ ] `images/ly11-giao-thoa-song-s02.png`
@@ -220,7 +245,7 @@ Delivery note from the brief: the final render is also meant for the study websi
    - "em" for M could be heard as the pronoun "em" ("Em dao động cực đại…"). If it is ambiguous, change it to "điểm em" in s5, s7 and s9. That adds 1 syllable each: s5 → 98%, s7 → 100%, s9 → 94%. s7 would then need "làm yếu nhau" → "yếu đi", or 1 s more.
    - "I-âng": some Vietnamese sources write "Y-âng". The sound is the same.
    - "web", plus the single letters "a" and "i" at the start of a phrase.
-6. **Website URL.** I found no public URL for the study website in the repo. The description has a bracketed placeholder that **must** be filled or removed before upload.
+6. **Website URL.** Resolved. The description links the GitHub Pages practice page (see §6 and item 7).
 7. **Channel name.** ✅ Confirmed by the human: intro card uses "Toán Lý Hoá 11 Trực Quan" (the YouTube channel); "Học Lý Hoá 11" stays as the website's name in s19 and the description. Website link filled in (GitHub Pages). Point M stays "em" — to be checked by ear during the voiceover.
 8. All numbers were checked by hand:
    - λ = 40/20 = 2 cm

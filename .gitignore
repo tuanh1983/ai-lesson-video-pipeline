@@ -13,3 +13,6 @@ youtube-video-studio/public/**
 # Local-only Claude Code settings and env files
 .claude/settings.local.json
 .env
+
+# Logs from review runs
+*.log
