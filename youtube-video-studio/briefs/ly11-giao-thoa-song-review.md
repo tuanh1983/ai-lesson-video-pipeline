@@ -1,64 +1,56 @@
-Round 1: FAIL — fixed · Round 2: PASS (Codex FAIL — fixed)
+Rounds 1–4 history: see production sheet · Round 5b review
 
-# Review: ly11-giao-thoa-song — FAIL (round 3)
+# Review: ly11-giao-thoa-song — PASS
 
-## Codex fixes: verification
-1. **s12 scope: applied in all four copies.**
-   - §2 caption and JSON line 28 both read `Trên S1S2: hai cực đại liên tiếp cách nhau 1 cm`.
-   - §2 narration and the §3 TTS block both read "Lam-đa hai xăng-ti-mét thì hai cực đại liên tiếp cách một xăng-ti-mét."
-   - I recounted it at 17 syllables in 5 s, which is 97%. The 1:14–1:19 slot is unchanged.
-2. **AI disclosure: applied.** §6 tells the publisher to set YouTube Studio's altered/synthetic / AI disclosure to **Yes**, giving AI images, TTS voice and Suno music as the reason. The publisher note at line 201 repeats this. "Video được tạo bằng công cụ AI." is still the last line of the description.
+## Codex round-4 points that were not overridden: verification
+1. **s9 is fixed.** The caption in both §2 and JSON line 25 reads `Hiệu 4 cm = 2λ → cực đại bậc 2 (nguồn cùng pha)` (11 words). The narration in §2 and §3 says "hiệu bốn xăng-ti-mét". That makes 24 syllables in 7 s, a 98% load.
+2. **s3 is fixed.** The caption reads `Nguồn kết hợp: cùng phương, cùng tần số, hiệu pha không đổi`. By the space-delimited rule this is **12** words, not the 11 that the sheet and Codex give, but it is still within the limit. The narration keeps the full SGK wording.
+3. **s13 is fixed.** The caption contains "(ánh sáng đơn sắc)" (12 words). The image prompt asks for a single amber colour and no rainbow colours.
+
+## Human decision 1 (i = λD/a, no qualifier): consistency check
+- It is applied everywhere it should be: the s14 caption and narration, the s17 caption, the s18 caption and narration, the §6 Young bullet, the §6 conversion line ("i = … = 1 mm") and §8 item 8. All of them use "=" with no qualifier.
+- "≈", "≪" and "gần vân trung tâm" now appear only in the change-history text. The sheet and the JSON agree.
 
 ## Required fixes (blocking)
-1. **[s18 recap, narration and caption] A result is stated without its condition (the new scope rule).**
-   - The problem: "cực đại ca lam-đa, cực tiểu ca cộng một phần hai lam-đa" / `Cực đại kλ · Cực tiểu (k + ½)λ` is the line students will memorize, and it drops "hai nguồn cùng pha". That condition was last said in s4, about 80 s earlier.
-   - Why it is an error: for sources in opposite phase the two conditions swap. The website sheet says so itself (vatLi.ts line 66: "Nếu hai nguồn ngược pha, vai trò cực đại và cực tiểu đổi cho nhau"), and the brief attaches "(hai nguồn cùng pha)" to this key point.
-   - **Exact fix:**
-     - Narration (§2 and §3): `Nguồn cùng pha: cực đại ca lam-đa, cực tiểu ca cộng một phần hai lam-đa, khoảng vân lam-đa đê chia a.` This replaces "Nhớ nhé" with "Nguồn cùng pha". It is 24 syllables in 7 s (98%), so durations and chapters stay the same.
-     - Caption (§2 and JSON line 34): `Nguồn cùng pha: cực đại kλ · cực tiểu (k + ½)λ · i = λD/a`. That is 11 words, with operators not counted.
-     - Update the syllable total: 363 → 364.
+None.
 
 ## Suggestions (optional)
-- **[s5, s6, s7 captions]** These are scoped by s4 (both its narration and its caption say "Hai nguồn cùng pha"), so they are acceptable. Still, each caption read alone states an in-phase-only result. Adding the condition on screen costs no time:
-  - `Hai nguồn cùng pha – cực đại: d2 − d1 = kλ (k = 0, ±1, ±2…)`
-  - `Trung trực S1S2 (nguồn cùng pha): cực đại k = 0`
-  - `Hai nguồn cùng pha – cực tiểu: d2 − d1 = (k + ½)λ (k nguyên)`
-- **[s11 caption]** "Hiệu đổi 2x" is true only for points between the sources on S1S2. The context covers this: s10 says "Trên S1S2" 5 s earlier, and the visual shows the segment. A zero-cost caption fix is `Trên S1S2: dịch x → hiệu đổi 2x; 2x = λ → x = λ/2`.
-- **[s13/s14] Monochromatic light.** i = λD/a needs a single wavelength, and the website sheet treats white light as a separate case. Caption-only options:
-  - s13: `Thí nghiệm Young (ánh sáng đơn sắc): vân sáng, vân tối xen kẽ`
-  - or s14: `(λ: bước sóng ánh sáng đơn sắc)`
-  - The narration has no room for this (s13 is at 95%).
-- **[i = λD/a, a ≪ D]** This is not blocking: the website sheet and SGK give the formula without the condition, and the worked numbers (a = 1 mm, D = 2 m) meet it anyway. It could be added to the description line `Thí nghiệm Young (a ≪ D): khoảng vân i = λD/a`.
-- **[s9]** "hiệu là bốn" has no unit (carried over from round 2). The caption shows 4 cm.
+- **[Human decision 1]** Strictly, i = λD/a is a small-angle result (a ≪ D, near the central fringe). Following the KNTT textbook is fine and not dangerous, and the worked example satisfies the condition (D/a = 2000). One line in the description or a pinned comment would cover it.
+- **[§Changes item 8, caption recheck]** Four counts in the recheck line are 1 too low: s2 is **12** (not 11), s3 is **12** (not 11), s10 is **10** (not 9) and s12 is **11** (not 10). All are still ≤ 12. Correct the line so a later round does not trust it.
+- **[Header line 3]** The bold says "Round 5", but the content is round 5b. This is cosmetic.
+- **[Render]** Check the wrap of the four 12-word captions in Mode B: s1, s2, s3 and s5, plus s13 and s18.
 
 ## Checked
-- **accuracy: one scope issue (s18), everything else ok.**
-  - Recomputed: λ = 40/20 = 2 cm. 14 − 10 = 4 cm = 2λ → k = 2. λ/2 = 1 cm. s11: 2x = λ → x = λ/2. i = 0,5·10⁻⁶ × 2 / 10⁻³ = 10⁻³ m = 1 mm.
-  - These agree with vatLi.ts lines 23–93: kλ (k = 0, ±1, ±2…), (k + ½)λ, trung trực k = 0, λ/2 between consecutive maxima on the segment, and i = λD/a with a, D and λ defined.
-  - Scope, scene by scene:
-    - s2/s3 match the sheet notes word for word.
-    - s4 sets the in-phase setup.
-    - s10 and s12 are now scoped "Trên S1S2 … liên tiếp".
-    - s14 says "hai vân sáng liên tiếp".
-    - The description has "Hai nguồn cùng pha:" and "Trên đoạn S₁S₂: … liên tiếp".
-    - Only s18 restates in-phase results with no condition.
-- **curriculum: ok.** KNTT Vật lí 11, Bài 12, SGK terminology.
+- **accuracy: ok.**
+  - Recomputed:
+    - λ = 40/20 = 2 cm.
+    - 14 − 10 = 4 cm = 2λ, so k = 2 for in-phase sources.
+    - On S1S2, a shift of x changes the path difference by 2x, so 2x = λ gives x = λ/2 = 1 cm.
+    - i = 0,5·10⁻⁶ × 2 / 10⁻³ = 10⁻³ m = 1 mm.
+  - All results match vatLi.ts lines 29–86 and the quiz.
+  - Scope at each chapter start:
+    - 00:22 (s4): "Hai nguồn cùng pha" appears in both the caption and the narration.
+    - 00:47 (s8–s9): λ = v/f needs no condition, and s9 has "(nguồn cùng pha)".
+    - 01:02 (s10): "Trên S1S2 … liên tiếp".
+    - 01:19 (s13): Young with monochromatic light. The formula is covered by the human decision.
+    - 01:44 (s18): "Nguồn cùng pha".
+  - s5, s6 and s7 carry "nguồn cùng pha" in their captions. s11 and s12 carry "Trên S1S2".
+- **curriculum: ok.** The script covers KNTT Vật lí 11, Bài 12 and uses SGK terminology.
 - **timing: 120 s vs target 120 s.**
-  - Intro 2 s + scenes 113 s + outro 5 s. This matches the 120.00 s render.
-  - The JSON's 19 durations and captions are identical to §2 (s12 and s14 updated in both).
-  - Syllables: 363, re-summed. The highest load is s12 at 97%. After fix 1, s18 is at 98%. All captions are ≤ 12 words.
-  - Chapters run 22/25/15/17/25/16 s (all ≥ 10 s).
-- **pedagogy: ok.** Hook at 0:02, one idea per scene, 3 worked examples, recap, CTA.
+  - Scene durations: 6+8+6+5+7+5+8+8+7+5+7+5+6+5+5+6+3+7+4 = 113 s. With the 2 s intro and 5 s outro that is 120 s, which matches the coordinator's 120.00 s render.
+  - Every scene was recounted. Syllables total 366 (≈ 104.6 s of speech). The maximum load is 98% (s9 and s18), and no scene is over 100%.
+  - The §1 timestamps match the durations. Chapters start at 00:00, 00:22, 00:47, 01:02, 01:19 and 01:44, giving lengths of 22, 25, 15, 17, 25 and 16 s (all ≥ 10 s).
+  - Every caption was recounted with the space-delimited rule: s1 12, s2 12, s3 12, s4 10, s5 12, s6 10, s7 11, s8 10, s9 11, s10 10, s11 11, s12 11, s13 12, s14 11, s15 11, s16 9, s17 4, s18 12, s19 9. All 19 are ≤ 12.
+- **pedagogy: ok.** The hook starts at 0:02, each scene covers one idea, there are 3 worked examples, and a recap and CTA close the video.
 - **policy: ok.**
-  - The description ends with the AI line.
-  - The Studio AI disclosure instruction is set to Yes.
+  - The description's last line is "Video được tạo bằng công cụ AI."
+  - The YouTube Studio AI / altered-or-synthetic content setting is set to Yes, covering the AI images, TTS voice and Suno music.
   - Made for kids: No.
-  - No real people, cloned voices, copyrighted characters or other channels' branding in the prompts.
-  - The Suno prompt names no artist.
+  - The prompts contain no real people, voice clones, copyrighted characters or other channels' branding.
 - **completeness: ok.**
   - All 8 sections are present.
-  - Asset names follow `ly11-giao-thoa-song-sNN.png` / `-voice.mp3` / `-music.mp3` / `-thumb.png`.
+  - Asset names follow the convention.
+  - All 19 captions and durations in the JSON match §2 character for character.
   - The JSON is valid against `src/schema.ts`.
-  - Channel name, "em" and the URL are human-confirmed.
 
-VERDICT: FAIL
+VERDICT: PASS

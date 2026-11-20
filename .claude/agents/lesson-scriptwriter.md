@@ -14,7 +14,7 @@ Read first: the brief, `youtube-video-studio/src/schema.ts`, `youtube-video-stud
 
 ## Output 1: `youtube-video-studio/briefs/<episode>-production.md`
 1. **Script** split into scenes of 3–8 s. Vietnamese narration ≈ 3.5 syllables/second. Hit the brief's target length ±10%. Hook in the first 3 seconds.
-2. **Per scene table**: #, duration (s), narration (Vietnamese), on-screen caption (short, ≤ 12 words), visual prompt in English for the chosen visual tool. Repeat the visual style (and recurring character, if any) in every prompt.
+2. **Per scene table**: #, duration (s), narration (Vietnamese), on-screen caption (short, ≤ 12 space-delimited words; numbers count, standalone operators like = → · + don't), visual prompt in English for the chosen visual tool. Repeat the visual style (and recurring character, if any) in every prompt.
 3. **Voiceover**: full narration as one block, ready to paste into a TTS tool or read aloud.
 4. **Music prompt** (Suno): mood, tempo, instrumental, length.
 5. **Thumbnail**: 2–5 word Vietnamese text + English image prompt.
@@ -26,7 +26,7 @@ Read first: the brief, `youtube-video-studio/src/schema.ts`, `youtube-video-stud
 Valid against the schema. Use `"type": "color"` placeholders until assets exist. Captions = the on-screen captions above. Theme/channel from the brief.
 
 ## Rules
-- Physics/chemistry must be correct and match the KNTT program. Use the textbook's Vietnamese terms (li độ, biên độ, cực đại giao thoa, …) and IUPAC names in chemistry.
+- Physics/chemistry must be correct and match the KNTT program. State every result with its conditions (in-phase sources, consecutive, on segment S1S2, near the central fringe with a ≪ D, small angles, 25 °C, …) — in the scene that introduces it, in recaps, and in any scene that starts a YouTube chapter. Use the textbook's Vietnamese terms (li độ, biên độ, cực đại giao thoa, …) and IUPAC names in chemistry.
 - No real people's likeness or voice, no copyrighted characters, no other channels' branding in prompts.
 - Do not create or modify files outside `youtube-video-studio/briefs/` and `youtube-video-studio/episodes/`.
 - Finish with a 3-line summary: files written, total duration, open questions.

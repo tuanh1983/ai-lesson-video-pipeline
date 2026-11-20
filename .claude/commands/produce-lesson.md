@@ -37,6 +37,10 @@ Ask the human to approve publishing (AskUserQuestion: Unlisted / Private / Publi
 Only after approval: `youtube-publisher` with the approved privacy stated explicitly in the prompt ("The human approved uploading <episode> as <privacy> in this session").
 Report the watch URL, the website change, and the reminders from `<episode>-published.md`.
 
+## Convergence (avoid endless review loops)
+- From round 3 on, tell reviewers to check (a) that earlier required fixes are applied and (b) regressions caused by the latest edit — and to list any NEW issue as blocking only if it is a scientific error or a policy problem; everything else goes under Suggestions.
+- When a gate hits its round limit, or the two reviewers disagree, ask the human (AskUserQuestion): another round / fix specific items / accept as is. Record the answer under "## Human decisions" in the production sheet; that record is what lets the pipeline continue.
+
 ## Rules
 - Reviewer and author are always different agents; never ask an author to approve its own work.
 - Stop on any FAILED result you cannot resolve within the round limits; never paper over a failed review.
