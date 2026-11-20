@@ -1,0 +1,16 @@
+{
+  "name": "hoc-ly-hoa-11",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "katex": "0.16.22",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  }
+}
