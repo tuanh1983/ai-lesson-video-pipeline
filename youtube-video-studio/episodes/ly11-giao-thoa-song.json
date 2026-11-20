@@ -15,24 +15,138 @@
   "musicDuckedVolume": 0.06,
   "thumbnailImage": "images/ly11-giao-thoa-song-thumb-bg.png",
   "scenes": [
-    { "src": "images/ly11-giao-thoa-song-s01.png", "type": "image", "durationInSeconds": 6, "caption": "Vì sao có chỗ sóng mạnh, có chỗ gần như đứng yên?", "kenBurns": true },
-    { "src": "images/ly11-giao-thoa-song-s02.png", "type": "image", "durationInSeconds": 8, "caption": "Giao thoa: vùng dao động mạnh xen kẽ vùng dao động yếu", "kenBurns": true },
-    { "src": "images/ly11-giao-thoa-song-s03.png", "type": "image", "durationInSeconds": 6, "caption": "Nguồn kết hợp: cùng phương, cùng tần số, hiệu pha không đổi", "kenBurns": true },
-    { "src": "images/ly11-giao-thoa-song-s04.png", "type": "image", "durationInSeconds": 5, "caption": "Hai nguồn cùng pha S1, S2 · MS1 = d1, MS2 = d2", "kenBurns": true },
-    { "src": "images/ly11-giao-thoa-song-s05.png", "type": "image", "durationInSeconds": 7, "caption": "Cực đại (nguồn cùng pha): d2 − d1 = kλ (k = 0, ±1, ±2…)", "kenBurns": true },
-    { "src": "images/ly11-giao-thoa-song-s06.png", "type": "image", "durationInSeconds": 5, "caption": "Trung trực S1S2 (nguồn cùng pha): cực đại k = 0", "kenBurns": true },
-    { "src": "images/ly11-giao-thoa-song-s07.png", "type": "image", "durationInSeconds": 8, "caption": "Cực tiểu (nguồn cùng pha): d2 − d1 = (k + ½)λ (k nguyên)", "kenBurns": true },
-    { "src": "images/ly11-giao-thoa-song-s08.png", "type": "image", "durationInSeconds": 8, "caption": "f = 20 Hz, v = 40 cm/s → λ = v/f = 2 cm", "kenBurns": true },
-    { "src": "images/ly11-giao-thoa-song-s09.png", "type": "image", "durationInSeconds": 7, "caption": "Hiệu 4 cm = 2λ → cực đại bậc 2 (nguồn cùng pha)", "kenBurns": true },
-    { "src": "images/ly11-giao-thoa-song-s10.png", "type": "image", "durationInSeconds": 5, "caption": "Trên S1S2: hai cực đại liên tiếp cách nhau λ/2", "kenBurns": true },
-    { "src": "images/ly11-giao-thoa-song-s11.png", "type": "image", "durationInSeconds": 7, "caption": "Trên S1S2: dịch x → hiệu đổi 2x; 2x = λ → x = λ/2", "kenBurns": true },
-    { "src": "images/ly11-giao-thoa-song-s12.png", "type": "image", "durationInSeconds": 5, "caption": "Trên S1S2: hai cực đại liên tiếp cách nhau 1 cm", "kenBurns": true },
-    { "src": "images/ly11-giao-thoa-song-s13.png", "type": "image", "durationInSeconds": 6, "caption": "Thí nghiệm Young (ánh sáng đơn sắc): vân sáng, tối xen kẽ", "kenBurns": true },
-    { "src": "images/ly11-giao-thoa-song-s14.png", "type": "image", "durationInSeconds": 5, "caption": "Khoảng vân: i = λD/a (λ: bước sóng ánh sáng đơn sắc)", "kenBurns": true },
-    { "src": "images/ly11-giao-thoa-song-s15.png", "type": "image", "durationInSeconds": 5, "caption": "a: khoảng cách hai khe · D: từ hai khe đến màn", "kenBurns": true },
-    { "src": "images/ly11-giao-thoa-song-s16.png", "type": "image", "durationInSeconds": 6, "caption": "a = 1 mm, D = 2 m, λ = 0,5 μm", "kenBurns": true },
-    { "src": "images/ly11-giao-thoa-song-s17.png", "type": "image", "durationInSeconds": 3, "caption": "i = λD/a = 1 mm", "kenBurns": true },
-    { "src": "images/ly11-giao-thoa-song-s18.png", "type": "image", "durationInSeconds": 7, "caption": "Nguồn cùng pha: cực đại kλ · cực tiểu (k + ½)λ · i = λD/a", "kenBurns": true },
-    { "src": "images/ly11-giao-thoa-song-s19.png", "type": "image", "durationInSeconds": 4, "caption": "Luyện tập ngay trên web Học Lý Hoá 11!", "kenBurns": true }
+    {
+      "src": "images/ly11-giao-thoa-song-s01.png",
+      "type": "image",
+      "durationInSeconds": 6,
+      "caption": "Vì sao có chỗ sóng mạnh, có chỗ gần như đứng yên?",
+      "kenBurns": true
+    },
+    {
+      "src": "images/ly11-giao-thoa-song-s02.png",
+      "type": "image",
+      "durationInSeconds": 8,
+      "caption": "Giao thoa: vùng dao động mạnh xen kẽ vùng dao động yếu",
+      "kenBurns": true
+    },
+    {
+      "src": "images/ly11-giao-thoa-song-s03.png",
+      "type": "image",
+      "durationInSeconds": 6,
+      "caption": "Nguồn kết hợp: cùng phương, cùng tần số, hiệu pha không đổi",
+      "kenBurns": true
+    },
+    {
+      "src": "images/ly11-giao-thoa-song-s04.png",
+      "type": "image",
+      "durationInSeconds": 5,
+      "caption": "Hai nguồn cùng pha S1, S2 · MS1 = d1, MS2 = d2",
+      "kenBurns": true
+    },
+    {
+      "src": "images/ly11-giao-thoa-song-s05.png",
+      "type": "image",
+      "durationInSeconds": 7,
+      "caption": "Cực đại (nguồn cùng pha): d2 − d1 = kλ (k = 0, ±1, ±2…)",
+      "kenBurns": true
+    },
+    {
+      "src": "images/ly11-giao-thoa-song-s06.png",
+      "type": "image",
+      "durationInSeconds": 5,
+      "caption": "Trung trực S1S2 (nguồn cùng pha): cực đại k = 0",
+      "kenBurns": true
+    },
+    {
+      "src": "images/ly11-giao-thoa-song-s07.png",
+      "type": "image",
+      "durationInSeconds": 8,
+      "caption": "Cực tiểu (nguồn cùng pha): d2 − d1 = (k + ½)λ (k nguyên)",
+      "kenBurns": true
+    },
+    {
+      "src": "images/ly11-giao-thoa-song-s08.png",
+      "type": "image",
+      "durationInSeconds": 8,
+      "caption": "f = 20 Hz, v = 40 cm/s → λ = v/f = 2 cm",
+      "kenBurns": true
+    },
+    {
+      "src": "images/ly11-giao-thoa-song-s09.png",
+      "type": "image",
+      "durationInSeconds": 7,
+      "caption": "Hiệu 4 cm = 2λ → cực đại bậc 2 (nguồn cùng pha)",
+      "kenBurns": true
+    },
+    {
+      "src": "images/ly11-giao-thoa-song-s10.png",
+      "type": "image",
+      "durationInSeconds": 5,
+      "caption": "Trên S1S2: hai cực đại liên tiếp cách nhau λ/2",
+      "kenBurns": true
+    },
+    {
+      "src": "images/ly11-giao-thoa-song-s11.png",
+      "type": "image",
+      "durationInSeconds": 7,
+      "caption": "Trên S1S2: dịch x → hiệu đổi 2x; 2x = λ → x = λ/2",
+      "kenBurns": true
+    },
+    {
+      "src": "images/ly11-giao-thoa-song-s12.png",
+      "type": "image",
+      "durationInSeconds": 5,
+      "caption": "Trên S1S2: hai cực đại liên tiếp cách nhau 1 cm",
+      "kenBurns": true
+    },
+    {
+      "src": "images/ly11-giao-thoa-song-s13.png",
+      "type": "image",
+      "durationInSeconds": 6,
+      "caption": "Thí nghiệm Young (ánh sáng đơn sắc): vân sáng, tối xen kẽ",
+      "kenBurns": false
+    },
+    {
+      "src": "images/ly11-giao-thoa-song-s14.png",
+      "type": "image",
+      "durationInSeconds": 5,
+      "caption": "Khoảng vân: i = λD/a (λ: bước sóng ánh sáng đơn sắc)",
+      "kenBurns": false
+    },
+    {
+      "src": "images/ly11-giao-thoa-song-s15.png",
+      "type": "image",
+      "durationInSeconds": 5,
+      "caption": "a: khoảng cách hai khe · D: từ hai khe đến màn",
+      "kenBurns": false
+    },
+    {
+      "src": "images/ly11-giao-thoa-song-s16.png",
+      "type": "image",
+      "durationInSeconds": 6,
+      "caption": "a = 1 mm, D = 2 m, λ = 0,5 μm",
+      "kenBurns": false
+    },
+    {
+      "src": "images/ly11-giao-thoa-song-s17.png",
+      "type": "image",
+      "durationInSeconds": 3,
+      "caption": "i = λD/a = 1 mm",
+      "kenBurns": false
+    },
+    {
+      "src": "images/ly11-giao-thoa-song-s18.png",
+      "type": "image",
+      "durationInSeconds": 7,
+      "caption": "Nguồn cùng pha: cực đại kλ · cực tiểu (k + ½)λ · i = λD/a",
+      "kenBurns": true
+    },
+    {
+      "src": "images/ly11-giao-thoa-song-s19.png",
+      "type": "image",
+      "durationInSeconds": 4,
+      "caption": "Luyện tập ngay trên web Học Lý Hoá 11!",
+      "kenBurns": false
+    }
   ]
 }

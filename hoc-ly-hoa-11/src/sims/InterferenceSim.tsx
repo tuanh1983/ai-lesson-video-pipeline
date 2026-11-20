@@ -7,7 +7,8 @@ import {Slider} from './SpringSim';
 // World: 24 cm × 15 cm, computed on a 10 px/cm grid then scaled up.
 const WORLD_W = 24;
 const WORLD_H = 15;
-const RES = 10;
+const RES = 20; // grid cells per cm (higher = smoother lines)
+const LINE_HALF_WIDTH = 0.07; // cm: maxima/minima lines have the same width everywhere
 const GW = WORLD_W * RES;
 const GH = WORLD_H * RES;
 const SRC_Y = 2; // cm from the top
@@ -30,14 +31,23 @@ export const InterferenceSim: React.FC = () => {
 	const dist = useMemo(() => {
 		const d1 = new Float32Array(GW * GH);
 		const d2 = new Float32Array(GW * GH);
+		// |∇(d2 − d1)| per cell: how fast the path difference changes. Used to draw lines of
+		// constant width (otherwise lines get thin/dashed near the sources and thick far away).
+		const grad = new Float32Array(GW * GH);
 		for (let j = 0; j < GH; j++)
 			for (let i = 0; i < GW; i++) {
 				const x = (i + 0.5) / RES;
 				const y = (j + 0.5) / RES;
-				d1[j * GW + i] = Math.hypot(x - s1.x, y - s1.y);
-				d2[j * GW + i] = Math.hypot(x - s2.x, y - s2.y);
+				const a = Math.hypot(x - s1.x, y - s1.y);
+				const b = Math.hypot(x - s2.x, y - s2.y);
+				const p = j * GW + i;
+				d1[p] = a;
+				d2[p] = b;
+				const gx = (x - s2.x) / Math.max(b, 1e-6) - (x - s1.x) / Math.max(a, 1e-6);
+				const gy = (y - s2.y) / Math.max(b, 1e-6) - (y - s1.y) / Math.max(a, 1e-6);
+				grad[p] = Math.hypot(gx, gy);
 			}
-		return {d1, d2};
+		return {d1, d2, grad};
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [sep]);
 
@@ -55,7 +65,7 @@ export const InterferenceSim: React.FC = () => {
 		const k = (2 * Math.PI) / lambda;
 		const dphi = anti ? Math.PI : 0;
 		const wt = phase.current;
-		const {d1, d2} = dist;
+		const {d1, d2, grad} = dist;
 		for (let p = 0; p < GW * GH; p++) {
 			const y = Math.cos(wt - k * d1[p]) + Math.cos(wt - k * d2[p] + dphi); // −2..2
 			let r = 20 + 45 * (y + 2);
@@ -65,11 +75,13 @@ export const InterferenceSim: React.FC = () => {
 				// path difference in wavelengths, shifted by ½ for antiphase sources
 				const n = (d2[p] - d1[p]) / lambda + (anti ? 0.5 : 0);
 				const frac = Math.abs(n - Math.round(n));
-				if (frac < 0.04) {
+				// tolerance in "wavelengths" that corresponds to a fixed line width in cm
+				const tol = Math.min(0.12, Math.max(0.003, (grad[p] * LINE_HALF_WIDTH) / lambda));
+				if (frac < tol) {
 					r = 255;
 					g = 210;
 					b = 60; // maxima: yellow
-				} else if (Math.abs(frac - 0.5) < 0.03) {
+				} else if (Math.abs(frac - 0.5) < tol) {
 					r = 230;
 					g = 70;
 					b = 80; // minima: red
