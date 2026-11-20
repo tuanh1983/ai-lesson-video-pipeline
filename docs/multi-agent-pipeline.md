@@ -38,6 +38,22 @@ brief.md
 [5] youtube-publisher ──► Zapier skill upload-youtube-lyhoa ──► embed video ID on the website
 ```
 
+## Two-model review gates (Claude + Codex)
+
+Every review gate has **two independent reviewers from different AI vendors**, and both must PASS:
+
+1. `content-reviewer` — Claude agent.
+2. `scripts/codex-review.sh` — OpenAI Codex CLI in a **read-only sandbox**, same checklist
+   (`.claude/agents/content-reviewer.md`), writes `briefs/<episode>-codex-review.md`
+   (or `-codex-render-review.md`, with the check frames attached as images).
+
+Codex runs only after Claude passes, so it judges the improved version and you spend less quota.
+Different models make different mistakes, so the second gate catches what the first one misses.
+Codex uses the ChatGPT login of whoever runs the pipeline (`codex login`); if it isn't available the
+pipeline says so and continues with the Claude verdict only.
+
+The script finds Codex on the PATH, or in the VS Code "Codex" extension; set `CODEX_BIN` to override.
+
 ## Agents (`.claude/agents/`)
 
 | Agent | Does | Can't do |

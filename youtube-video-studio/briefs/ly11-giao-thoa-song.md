@@ -2,7 +2,8 @@
 <!-- Run:  /new-episode briefs/ly11-giao-thoa-song.md   (from the youtube-video-studio folder) -->
 
 ## 1. Channel
-- Channel name: Học Lý Hoá 11
+- Channel name: Toán Lý Hoá 11 Trực Quan
+- Study website: Học Lý Hoá 11 — https://tuanh1983.github.io/ai-lesson-video-pipeline/
 - Niche / topic area: Vật lí 11 – Kết nối tri thức
 - Target audience: học sinh lớp 11
 - Language of voiceover & captions: Vietnamese

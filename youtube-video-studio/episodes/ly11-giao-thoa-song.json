@@ -1,5 +1,5 @@
 {
-  "channelName": "Học Lý Hoá 11",
+  "channelName": "Toán Lý Hoá 11 Trực Quan",
   "title": "Giao thoa sóng trong 2 phút",
   "subtitle": "Vật lí 11 · Bài 12 – Kết nối tri thức",
   "theme": {
@@ -20,11 +20,11 @@
     { "type": "color", "durationInSeconds": 5, "caption": "Hai nguồn cùng pha S1, S2 · MS1 = d1, MS2 = d2" },
     { "type": "color", "durationInSeconds": 7, "caption": "Cực đại: d2 − d1 = kλ (k = 0, ±1, ±2…)" },
     { "type": "color", "durationInSeconds": 5, "caption": "Trung trực của S1S2: cực đại k = 0" },
-    { "type": "color", "durationInSeconds": 8, "caption": "Cực tiểu: d2 − d1 = (k + ½)λ" },
+    { "type": "color", "durationInSeconds": 8, "caption": "Cực tiểu: d2 − d1 = (k + ½)λ (k nguyên)" },
     { "type": "color", "durationInSeconds": 8, "caption": "f = 20 Hz, v = 40 cm/s → λ = v/f = 2 cm" },
     { "type": "color", "durationInSeconds": 7, "caption": "Hiệu đường đi 4 cm = 2λ → cực đại bậc 2" },
     { "type": "color", "durationInSeconds": 5, "caption": "Trên S1S2: hai cực đại liên tiếp cách nhau λ/2" },
-    { "type": "color", "durationInSeconds": 6, "caption": "Dịch x → hiệu đường đi đổi 2x; cần đổi λ" },
+    { "type": "color", "durationInSeconds": 7, "caption": "Dịch x → hiệu đổi 2x; 2x = λ → x = λ/2" },
     { "type": "color", "durationInSeconds": 5, "caption": "λ = 2 cm → các cực đại cách nhau 1 cm" },
     { "type": "color", "durationInSeconds": 6, "caption": "Thí nghiệm Young: vân sáng, vân tối xen kẽ" },
     { "type": "color", "durationInSeconds": 5, "caption": "Khoảng vân: i = λD/a" },
